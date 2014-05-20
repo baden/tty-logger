@@ -1,0 +1,29 @@
+<link rel="import" href="tty-port.html">
+
+<polymer-element name="foo-element" attributes="bar">
+  <template>
+      <div>
+          <tty-port></tty-port>
+          Port: <select name="tty-port"></select>
+          Oh yes , this custom (polymer) element works !! {{bar}}
+      </div>
+  </template>
+  <script>
+      console.log('foo-element:scope');
+    Polymer('foo-element', {
+      bar: 42,
+      created:function()
+      {
+        // console.log("foo-element created", this);
+      },
+      ready:function()
+      {
+        // console.log("foo-element ready", this);
+      },
+      enteredView:function()
+      {
+        // console.log("foo-element enteredView", this);
+      }
+    });
+  </script>
+</polymer>

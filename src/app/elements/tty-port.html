@@ -1,0 +1,26 @@
+
+<polymer-element name="tty-port" attributes="selected">
+    <template>
+        <link rel="stylesheet" href="tty-port.css">
+        <div>
+            <select id="select" name="tty-port" value="{{selected}}"><option value="">Выберите порт</option></select>
+            <input id="color" type="color" value="#fffff" on-change="{{buttonClick}}">
+            <button class="btn btn-default" on-click="{{buttonClick}}">
+                <span class="glyphicon glyphicon-play"></span> Подключить
+            </button>
+            Выбран порт: {{selected}}
+            <button class="btn btn-danger" on-click="{{buttonRemove}}" title="Удалить">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </div>
+    </template>
+    <script src="tty-port.js"></script>
+</polymer>
+
+
+<!-- <polymer-element name="g-cool" on-mousedown="{{keypressHandler}}">
+  <template>
+    <button id="button" on-tap="{{buttonClick}}">Click me</button>
+  </template>
+  <script src="tty-port.js"></script>
+</polymer-element> -->

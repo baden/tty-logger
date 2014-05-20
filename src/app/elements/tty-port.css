@@ -1,0 +1,9 @@
+select {
+    width: 130px;
+    padding: 6px;
+}
+
+input[type=color] {
+    height: 34px;
+    vertical-align: bottom;
+}

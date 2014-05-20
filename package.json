@@ -32,7 +32,8 @@
     "q": "2.0.x",
     "request": "2.34.0",
     "underscore": "1.6.x",
-    "zlib": "1.0.5"
+    "zlib": "1.0.5",
+    "serialport": "~1.4.0"
   },
   "devDependencies": {
     "grunt": "0.4.4",

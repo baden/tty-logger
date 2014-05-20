@@ -4,6 +4,9 @@
 
     'use strict';
 
+    var serialPort = require("serialport");
+    console.log('serialPort=', serialPort);
+
     var format = d3.time.format('%H:%M:%S');
     var deltaformat = d3.format('.3f');
 
@@ -49,5 +52,22 @@
 
     });
 
+    var ports = document.querySelector('#ports');
+    console.log('ports=', ports);
+
+    document.querySelector('#addtty').addEventListener('click', function(){
+            console.log('add port');
+            var li = document.createElement('li');
+            var portelement = document.createElement('tty-port');
+            li.appendChild(portelement);
+            li.className = "list-group-item";
+            ports.appendChild(li);
+
+    });
+
+    // $('#addtty').click(function(){
+    //         var portelement = document.createElement('tty-port');
+    //         ports.appendChild(portelement);
+    // });
 
 })(jQuery, d3);
