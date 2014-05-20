@@ -29,15 +29,18 @@ var
 
 */
 // Create the System Temp Folder. This is used to store temporary data like movie files.
-if( ! fs.existsSync(tmpFolder) ) { fs.mkdir(tmpFolder); }
 
-deleteFolder = function(path) {
-	if( typeof path != 'string' ) return;
+if (!fs.existsSync(tmpFolder)) { fs.mkdir(tmpFolder); }
+
+var deleteFolder = function (path) {
+    'use strict';
+
+    if (typeof path !== 'string') { return; }
 	try {
 		var files = [];
-		if( fs.existsSync(path) ) {
+		if (fs.existsSync(path)) {
 			files = fs.readdirSync(path);
-			files.forEach(function(file,index){
+			files.forEach(function(file, index){
 				var curPath = path + "/" + file;
 				if(fs.lstatSync(curPath).isDirectory()) {
 					deleteFolder(curPath);
@@ -62,9 +65,10 @@ win.on('close', function(){
 // Developer Shortcuts
 Mousetrap.bind(['shift+f12', 'f12'], function(e) {
 	win.showDevTools();
-}
-ousetrap.bind('f11', function(e) {
-	winreloadIgnoringCache();
+});
+
+Mousetrap.bind(['f5', 'f11'], function(e) {
+	win.reloadIgnoringCache();
 });
 
 // Special Debug Console Calls!

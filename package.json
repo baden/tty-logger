@@ -15,14 +15,16 @@
   },
   "window": {
     "title": "TTY Logger",
+    "id": "TTY_Logger_ID",
     "icon": "src/app/images/icon.png",
     "toolbar": false,
-    "frame": false,
-    "width": 1100,
-    "height": 618,
-    "min_width": 990,
-    "min_height": 556,
-    "resizable": true
+    "frame": true,
+    "width": 800,
+    "height": 600,
+    "min_width": 600,
+    "min_height": 400,
+    "resizable": true,
+    "position": "center"
   },
   "dependencies": {
     "async": "0.8.0",
@@ -37,7 +39,6 @@
     "grunt-bump": "0.0.13",
     "grunt-conventional-changelog": "^1.1.0",
     "grunt-contrib-copy": "0.5.0",
-    "grunt-contrib-stylus": "0.15.1",
     "grunt-contrib-watch": "0.6.x",
     "grunt-node-webkit-builder": "0.1.x",
     "grunt-exec": "0.4.x",

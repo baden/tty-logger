@@ -6,12 +6,12 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('default', [
-		'stylus'
+		// 'exec:linux64'
 	]);
-
-	grunt.registerTask('css', [
-		'stylus'
-	]);
+    //
+	// grunt.registerTask('css', [
+	// 	'stylus'
+	// ]);
 
 	grunt.registerTask('nodewkbuild', [
 		'nodewebkit:build'
@@ -36,19 +36,19 @@ module.exports = function(grunt) {
 			}
 		},
 
-		stylus: {
-			compile: {
-				options: {
-					compress: false,
-					'resolve url': true,
-					use: ['nib'],
-					paths: ['src/app/styl']
-				},
-				files: {
-					'src/app/css/app.css' : 'src/app/styl/app.styl'
-				}
-			}
-		},
+		// stylus: {
+		// 	compile: {
+		// 		options: {
+		// 			compress: false,
+		// 			'resolve url': true,
+		// 			use: ['nib'],
+		// 			paths: ['src/app/styl']
+		// 		},
+		// 		files: {
+		// 			'src/app/css/app.css' : 'src/app/styl/app.styl'
+		// 		}
+		// 	}
+		// },
 
 		nodewebkit: {
 			build: {
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 					linux64: buildPlatforms.linux64,
 					download_url: 'http://nw.get-popcorn.com/'
 				},
-				src: ['./src/**', './node_modules/**', '!./node_modules/bower/**', '!./node_modules/grunt*/**', '!./node_modules/stylus/**', './package.json', './README.md', './LICENSE.txt' ]
+				src: ['./src/**', './node_modules/**', '!./node_modules/bower/**', '!./node_modules/grunt*/**', './package.json', './README.md', './LICENSE.txt' ]
 			},
 			dist: {
 				options: {
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 					linux64: buildPlatforms.linux64,
 					download_url: 'http://nw.get-popcorn.com/'
 				},
-				src: ['./src/**', './node_modules/**', '!./node_modules/bower/**', '!./node_modules/grunt*/**', '!./node_modules/stylus/**', './package.json', './README.md', './LICENSE.txt' ]
+				src: ['./src/**', './node_modules/**', '!./node_modules/bower/**', '!./node_modules/grunt*/**', './package.json', './README.md', './LICENSE.txt' ]
 			}
 		},
 
@@ -118,11 +118,11 @@ module.exports = function(grunt) {
 					grunt.log.writeln('Completed in ' + time + 'ms at ' + (new Date()).toLocaleTimeString());
 					grunt.log.writeln('Waiting for more changes...');
 				},
-			},
-			scripts: {
-				files: ['./src/app/styl/*.styl','./src/app/styl/**/*.styl'],
-				tasks: ['css']
-			},
+			}
+			// scripts: {
+			// 	files: ['./src/app/styl/*.styl','./src/app/styl/**/*.styl'],
+			// 	tasks: ['css']
+			// },
 		},
 	});
 

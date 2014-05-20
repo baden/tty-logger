@@ -7,21 +7,33 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-	<p class="title" title="<%= title %>"><%= title %></p>
 
-    WIP.
+    <div class="tools">
+
+        <button class="btn" id="addtty" title="Добавить порт">+</button>
+
+        <button id="test">Test</button>
+        
+    </div>
+
+    <div id="logcontainer">
+        <pre id="log" class="log"></pre>
+    </div>
+
 
 	<!-- 3rd party Dependencies -->
 	<script src="vendor/jquery/dist/jquery.js"></script>
-	<script src="vendor/underscore/underscore.js"></script>
+	<!-- <script src="vendor/underscore/underscore.js"></script> -->
 	<script src="vendor/mousetrap/mousetrap.min.js"></script>
-	<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="vendor/d3/d3.min.js"></script>
+	<!-- <script src="vendor/bootstrap/dist/js/bootstrap.js"></script> -->
 
 	<!-- Other dependencies -->
 
 	<!-- App Initialization -->
 	<script src="app.js"></script>
+	<script src="main.js"></script>
 
-	<script src="bootstrap.js"></script>
+	<!-- <script src="bootstrap.js"></script> -->
 </body>
 </html>
