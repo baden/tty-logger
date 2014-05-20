@@ -1,14 +1,28 @@
 
-<polymer-element name="tty-port" attributes="selected">
+<polymer-element name="tty-port" attributes="port boudrate">
     <template>
         <link rel="stylesheet" href="tty-port.css">
         <div>
-            <select id="select" name="tty-port" value="{{selected}}"><option value="">Выберите порт</option></select>
-            <input id="color" type="color" value="#fffff" on-change="{{buttonClick}}">
-            <button class="btn btn-default" on-click="{{buttonClick}}">
+            <select id="port" name="tty-port" value="{{port}}"><option value="">Выберите порт</option></select>
+            <select id="boudrate" name="tty-boudrate" value="{{boudrate}}">
+                <option value="">Скорость.</option>
+                <option value="4800">2400</option>
+                <option value="4800">4800</option>
+                <option value="9600">9600</option>
+                <option value="115200">19200</option>
+                <option value="115200">38400</option>
+                <option value="115200">57600</option>
+                <option value="115200">115200</option>
+            </select>
+
+            <input id="color" type="color" value="#fffff" on-change="{{changeColor}}">
+            <button class="btn btn-default" on-click="{{buttonConnect}}">
                 <span class="glyphicon glyphicon-play"></span> Подключить
             </button>
-            Выбран порт: {{selected}}
+            <button class="btn btn-default" on-click="{{buttonDisconnect}}">
+                <span class="glyphicon glyphicon-stop"></span> Отключить
+            </button>
+            Выбран порт: {{port}}:{{boudrate}}
             <button class="btn btn-danger" on-click="{{buttonRemove}}" title="Удалить">
                 <span class="glyphicon glyphicon-remove"></span>
             </button>
