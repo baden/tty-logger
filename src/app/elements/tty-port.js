@@ -65,7 +65,7 @@ Polymer('tty-port', {
 
         that.serialPort = new SerialPort(port, {
             baudrate: boudrate | 0,
-            parser: serialport.parsers.readline("\n")
+            parser: serialport.parsers.readline("\r")
         });
 
         that.serialPort.on("open", function () {
@@ -73,9 +73,16 @@ Polymer('tty-port', {
         //   console.log('open');
           that.logger.addline('connected ' + port, color);
           that.serialPort.on('data', function(data) {
+              var line;
             // console.log('data received: ' + toHex(data));
-            if((data === '\r') || (data === '')) return;
-            that.logger.addline(data, that.$.color.value);
+            if(data.substr(0, 1) === '\n') {
+                line = data.substr(1, data.length-1);
+            } else {
+                line = data;
+            }
+
+            if(line === '') return;
+            that.logger.addline(line, that.$.color.value);
           });
         });
         that.serialPort.on("close", function () {
